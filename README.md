@@ -3,24 +3,43 @@
 > Node.js + Express + MongoDB backend for a college appointment booking system.
 > Includes JWT auth, professor availability, appointment booking/cancellation and an end-to-end Jest+Supertest test.
 
----
----
-Develop backend APIs written in JavaScript and MongoDB with one automated test case for a college appointment system that allows students to book appointments with professors. The system should enable professors to specify their availability, manage bookings, and allow students to authenticate, view available slots, and book appointments.
 
-##Requirements
-Develop only the APIs and 1 E2E automated test case needed to enable the following user flow:
-Student A1 authenticates to access the system.
-Professor P1 authenticates to access the system.
-Professor P1 specifies which time slots he is free for appointments.
-Student A1 views available time slots for Professor P1.
+---
+Project overview
+
+A simple backend API for a college appointment booking system.
+
+Professors can specify available time slots for appointments.
+
+Students can view those slots and book appointments.
+
+Professors can cancel appointments.
+
+Authentication is JWT-based with role support (student / professor).
+
+One automated end-to-end (E2E) test (Jest + Supertest) verifies the full user flow described below.
+
+Assignment / Requirements (short)
+
+Build only the backend APIs and one E2E automated test required to demonstrate this exact flow:
+
+Student A1 authenticates.
+
+Professor P1 authenticates.
+
+Professor P1 posts availability slots.
+
+Student A1 views Professor P1’s available slots.
+
 Student A1 books an appointment with Professor P1 for time T1.
-Student A2 authenticates to access the system.
+
+Student A2 authenticates.
+
 Student A2 books an appointment with Professor P1 for time T2.
+
 Professor P1 cancels the appointment with Student A1.
 
-##Database Requirements
-Use a database to store data related to users (students and professors), their availability, and appointment details.
-Ensure that the database schema supports necessary relationships (e.g., between users and appointments) and maintains data integrity
+Database requirements: persist users (students & professors), professor availability, and appointment records. Maintain relationships (appointments reference professor and student) and ensure basic integrity (no double-booking for the same professor/time).
 
 ---
 
